@@ -6,17 +6,17 @@ pipeline {
   stages {
     stage('build'){
       steps {
-        sh 'docker build -t thetharz/3996-node-app-image .'
+        bat 'docker build -t nisal2001/3886-node-app .'
       }
     }
     stage('run'){
       steps{
-        sh 'docker run -d -p 5000:3000 thetharz/3996-node-app-image'
+        bat 'docker run -d -p 5000:3000 nisal2001/3886-node-app'
       }
     }
     stage('status'){
       steps{
-        sh 'docker ps'
+        bat 'docker ps'
       }
     }
   }
